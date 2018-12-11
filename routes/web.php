@@ -17,3 +17,4 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
+Route::resource('kategori','KategoriController');
