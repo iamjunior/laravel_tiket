@@ -35,7 +35,10 @@
                                     <td>{{ $item->jumlah_tiket }}</td>
                                     <td>{{ $item->harga_tiket }}</td>
                                     <td><a href="{{ route('tiket.edit', $item->id) }}" name="submit" class="btn btn-danger">Edit</a></td>
+                                    
+                                    {!! Form::open(['route'=>['tiket.destroy',$item->id],'method'=>'Delete']) !!}
                                     <td><button type="submit" name="submit" class="btn btn-danger">Hapus</button></td>
+                                    {!! Form::close() !!}
 
                                 </tr>
                             <?php $no++; ?>

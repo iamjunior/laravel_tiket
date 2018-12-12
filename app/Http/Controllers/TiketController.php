@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Tiket;
+use App\Kategori;
 class TiketController extends Controller
 {
     /**
@@ -24,7 +25,8 @@ class TiketController extends Controller
      */
     public function create()
     {
-        return view('tiket.create');
+        $kategori = Kategori::all();
+        return view('tiket.create',compact('kategori'));
     }
 
     /**
@@ -35,7 +37,16 @@ class TiketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name_tiket' => 'max:30|required',
+            'harga_tiket' => 'max:12|required',
+            'jenis_tiket' => 'max:10|required',
+            'id_kategori' => 'max:11|required',
+            'jumlah_tiket' => 'max:11|required',
+        ]);
+            // return $request->all();
+        $tiker=Tiket::create($request->all());
+        return redirect()->route('tiket.index')->with('pesan','data berhasil di simpan');
     }
 
     /**
@@ -58,7 +69,8 @@ class TiketController extends Controller
     public function edit($id)
     {
         $tiket=Tiket::findOrFail($id);
-        return view('tiket.edit', compact('tiket'));
+        $kategori = Kategori::all();
+        return view('tiket.edit', compact(['tiket','kategori']));
     }
 
     /**
@@ -70,7 +82,17 @@ class TiketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name_tiket' => 'max:30|required',
+            'harga_tiket' => 'max:12|required',
+            'jenis_tiket' => 'max:10|required',
+            'id_kategori' => 'max:11|required',
+            'jumlah_tiket' => 'max:11|required',
+        ]);
+        
+        $tiket=Tiket::find($id);
+        $tiket->update($request->all());
+        return redirect()->route('tiket.index')->with('pesan','data berhasil di simpan');
     }
 
     /**
@@ -81,6 +103,11 @@ class TiketController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tiket=Tiket::find($id);
+        if(!$tiket){
+            return redirect()->back();
+        }
+        $tiket->delete();
+        return redirect()->route('tiket.index')->with('pesan', 'data tiket bershasil di hapus');
     }
 }

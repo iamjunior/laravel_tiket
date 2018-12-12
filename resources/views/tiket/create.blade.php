@@ -13,7 +13,7 @@
                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Nama Tiket</label>
                                  <div class="col-md-6">
-                                 {!! Form::text('nama_tiket',null,['class'=>'form-control']) !!}
+                                 {!! Form::text('name_tiket',null,['class'=>'form-control']) !!}
                                  </div>
                            </div>
 
@@ -24,12 +24,16 @@
                                  </div>
                            </div>
 
-                          <div class="form-group row">
+                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Nama kategori</label>
-                                 <div class="col-md-6">
-                                 {!! Form::select('id_kategori',['tiket'=>'A','TIKET'=>'B'],NULL,['class'=>'form-control']) !!}
+                                <div class="col-md-6">
+                                  <select name="id_kategori" class="form-control">
+                                    @foreach ($kategori as $item)
+                                      <option value="{{ $item->id }}">{{ $item->nama_kategori }}</option>
+                                    @endforeach
+                                  </select>
                                 </div>
-                           </div>
+                            </div>
 
                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Jumlah</label>
@@ -39,7 +43,7 @@
                            </div>
 
                           <div class="form-group row">
-                            <label class="col-md-2 col-form-label text-md-right">Jumlah</label>
+                            <label class="col-md-2 col-form-label text-md-right">Harga</label>
                                  <div class="col-md-6">
                                         {!! Form::number('harga_tiket',null,['class'=>'form-control']) !!}
                                  </div>

@@ -8,7 +8,7 @@
                   <div class="card-header">Tambah Tiket</div>
                       <div class="card-body">
                               @include('validasi')
-                          {!! Form::model($tiket,['route'=>['tiket.store',$tiket->id],'method'=>'PUT']) !!}
+                          {!! Form::model($tiket,['route'=>['tiket.update',$tiket->id],'method'=>'PUT']) !!}
 
                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Nama Tiket</label>
@@ -24,12 +24,17 @@
                                  </div>
                            </div>
 
-                          <div class="form-group row">
+                           
+                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Nama kategori</label>
-                                 <div class="col-md-6">
-                                 {!! Form::select('id_kategori',['tiket'=>'A','TIKET'=>'B'],NULL,['class'=>'form-control']) !!}
+                                <div class="col-md-6">
+                                  <select name="id_kategori" class="form-control">
+                                    @foreach ($kategori as $item)
+                                        <option value="{{ $item->id }}" {{ $item->id == $tiket->id_kategori ? 'selected' : '' }}>{{ $item->nama_kategori }}</option>
+                                    @endforeach
+                                  </select>
                                 </div>
-                           </div>
+                            </div>
 
                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Jumlah</label>
