@@ -1,0 +1,65 @@
+Alur Laravel Tiket
+Video1
+- Download laravel 
+- Create Database laravel_tiket
+composer create-project --prefer-dist laravel/laravel laravel_tiket
+- Setting .env setting database koneksikan.
+
+- Rubah app/Providers/AppServiceProvider.php
+use Illuminate\Support\Facades\Schema;
+Schema::defaultStringLength(191);
+
+Video2
+- buat login menggunakan library auth
+php artisan make:auth
+- Kita migrasi tb_user
+php artisan migrate
+
+Video3
+- Reset Password
+daftar di mailtrap.io menggunakan akun github
+-Pengauran Email Verification
+Buka Doc "Email Verification"
++tambahkan pada class user : implements MustVerifyEmail 
++Edit Route ubah Auth : Auth::routes(['verify' => true]);
++jika terjadi error, di .env localhost tambahkan port
+
+Video 4
+- Copy dari bahan ajar : app.blade.php untuk view
+- buat model plus migration : php artisan make:model Kategori -m
+- Buat Route kategori : Route::resource('kategori','KategoriController');
+- Tambahkan field: $table->string('nama_kategori',100);
+-Buat controller sekaligus resource : php artisan make:controller KategoriController --resource
+- edit kategoriController method index: return view('kategori.index')
+- Buat view kategori/index.blade.php : copykan isi dari sample table kategori
+
+video 5
+-memanggil : use App\Kategori;
+- Menggunakan query: $kategori= Kategori::all();
+- Buat perubahan di view kategori/index.blade.php
+
+video 6
+- Membuat view create
+- membuat laravel colective : https://laravelcollective.com/ : composer require "laravelcollective/html"
+- Tambahkan Provider dan aliasis di config/app.php
+- buat validasi dan notifikasi, masukan di controller dan view masing2x
+
+video 7
+- KategoriController
+
+video 8
+- Create TiketController : php artisan make;controller TiketController --resource
+- CRUD tiket, ambil dari git andi view index dan create
+
+video 9
+- create Model Tiket php artisan make:model Tiket -m
+- View, view add, view edit
+
+video 10
+- delete
+No video
+- Buat Add sendiri, Edit Sendiri
+
+video 11
+- buat model : php artisan make:model Transaksi -m
+- buat controller : php artisan make:controller TransaksiController
