@@ -63,3 +63,6 @@ No video
 video 11
 - buat model : php artisan make:model Transaksi -m
 - buat controller : php artisan make:controller TransaksiController
+
+video 12
+-view transaksi, add transaksi
