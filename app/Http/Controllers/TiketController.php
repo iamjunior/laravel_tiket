@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Tiket;
 class TiketController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class TiketController extends Controller
      */
     public function index()
     {
-        return view('tiket.index');
+        $tiket = Tiket::all();
+        return view('tiket.index', compact('tiket'));
     }
 
     /**
@@ -56,7 +57,8 @@ class TiketController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tiket=Tiket::findOrFail($id);
+        return view('tiket.edit', compact('tiket'));
     }
 
     /**

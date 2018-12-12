@@ -25,18 +25,23 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $no=1;?>
+                            @foreach ($tiket as $item)
                               <tr>
-                                    <td>1</td>
-                                    <td>NAMA TIKET</td>
-                                    <td>JENIS TIKET</td>
-                                    <td>kategori TIKET</td>
-                                    <td>JUMLAH TIKET</td>
-                                    <td>HARGA TIKET TIKET</td>
-                                    <td><button type="submit" name="submit" class="btn btn-danger">Edit</button></td>
+                                    <td>{{ $no }}</td>
+                                    <td>{{ $item->name_tiket }}</td>
+                                    <td>{{ $item->jenis_tiket }}</td>
+                                    <td>{{ $item->kategori->nama_kategori }}</td>
+                                    <td>{{ $item->jumlah_tiket }}</td>
+                                    <td>{{ $item->harga_tiket }}</td>
+                                    <td><a href="{{ route('tiket.edit', $item->id) }}" name="submit" class="btn btn-danger">Edit</a></td>
                                     <td><button type="submit" name="submit" class="btn btn-danger">Hapus</button></td>
 
                                 </tr>
-
+                            <?php $no++; ?>
+  
+                            @endforeach
+                              
                         </tbody>
                     </table>
 
