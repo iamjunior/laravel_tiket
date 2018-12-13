@@ -62,7 +62,7 @@
                                <a class="nav-link" href="{{ route('transaksi.index')}}">Transaksi</a>
                         </li>
                         <li class="nav-item">
-                               <a class="nav-link" href="#">Laporan Penjualan Tiket</a>
+                               <a class="nav-link" href="{{ route('transaksi.laporan')}}">Laporan Penjualan Tiket</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Transaksi;
+use Fpdf;
 
 class TransaksiController extends Controller
 {
@@ -39,5 +40,23 @@ class TransaksiController extends Controller
         $transaksi=Transaksi::where('status','0');
         $transaksi->update(['status' => '1']);
         return redirect()->back();
+    }
+    
+    public function laporan()
+    {
+        // Cara 1
+        // Fpdf::AddPage();
+        // Fpdf::SetFont('Courier', 'B', 18);
+        // Fpdf::Cell(50, 25, 'Hello World!');
+        // Fpdf::Output();
+        // exit;
+
+        // Cara 2
+        $fpdf = new Fpdf();
+        $fpdf::AddPage();
+        $fpdf::SetFont('Courier', 'B', 18);
+        $fpdf::Cell(50, 25, 'Hello World!');
+        $fpdf::Output();
+        exit();
     }
 }

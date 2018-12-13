@@ -72,3 +72,11 @@ video 13
 
 video 14
 - Transaksi Selesai
+
+video 15
+- buat route :Route::get('transaksi/pdf','TransaksiController@laporan')->name('transaksi.laporan');
+- download library codedge/laravel-fpdf
+- download : composer require codedge/laravel-fpdf
+- tambahkan pada provider: Codedge\Fpdf\FpdfServiceProvider::class, // [1]
+- tambahkan pada aliases:'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class, // [2]
+- tambhkan basic example pada controller
