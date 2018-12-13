@@ -101,3 +101,9 @@ video 19
 END
 
 - Triger untuk cancel transaksi: Cari sambil berjalan
+
+video 20
+- Install library laravel excel dari:https://laravel-excel.maatwebsite.nl/3.1/getting-started/installation.html
+ikuti langkahnya
+- Jangan lupa untuk melakukan : php artisan vendor:publish
+- Pilih Maatwebsite\excel\..... atau no 9
