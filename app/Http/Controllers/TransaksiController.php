@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Transaksi;
 use Fpdf;
+use App\Exports\TransaksiExport;
 
 class TransaksiController extends Controller
 {
@@ -94,6 +95,6 @@ class TransaksiController extends Controller
 
     public function excel()
     {
-        return 'cilu baaaa...!!';
+        return (new TransaksiExport)->download('penjualan_tiket.xlsx');
     }
 }

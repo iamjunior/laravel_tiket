@@ -112,3 +112,11 @@ video 21
 - Edit App Blade Penambahan Menu PDF dan excel
 - Tambah Routing Excel :
 - Tambah Method excel di TransaksiController
+
+video 22
+- Tambahkan fungsi export : php artisan make:export TransaksiExport --model=Transaksi
+- Panggil View, FromView dan Exportable pada export/TransaksiExport.php
+- Pada TransaksiController Use: App\Exports\TransaksiExport
+- pada fungsi export return: (new TransaksiExport)->download('penjualan_tiket'.'xlsx');
+- buat file view /transaksi/report.blade.php, copykan dari file index
+- pada Exports/TransaksiExport.php ubah implementasi FromCollection menjadi FromVieww
