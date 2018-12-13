@@ -23,4 +23,14 @@ class TransaksiController extends Controller
         Transaksi::create($request->except('submit'));
         return redirect()->route('transaksi.index');
     }
+
+    public function destroy($id)
+    {
+        $transaksi=Transaksi::findOrFail($id);
+        if(!$transaksi){
+            return redirect()->back();
+        }
+        $transaksi->delete();
+        return redirect()->route('transaksi.index');
+    }
 }

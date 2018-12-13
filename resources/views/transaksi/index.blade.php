@@ -38,7 +38,9 @@
                                 <td>{{ $item->qty }}</td>
                                 <td>{{ $item->tiket->harga_tiket }}</td>
                                 <td>{{ $item->tiket->harga_tiket*$item->qty }}</td>
+                                {!! Form::open(['route'=>['transaksi.destroy',$item->id],'method'=>'DELETE'])!!}
                                 <td><button type="submit" class="btn btn-danger">Cancel</button></td></tr>
+                                {!! Form::close() !!}
                                <?php $no++ ?>
                                 <?php $total=$total+($item->tiket->harga_tiket*$item->qty) ?>
                        @endforeach
