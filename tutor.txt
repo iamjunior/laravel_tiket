@@ -87,3 +87,9 @@ video 16
 video 17
 - Middleware auth : Route::group(['middleware'  => 'auth'], function() { });
 - default login
+
+video 18
+-app.blade.php : tambahkan @yield('chart')
+-Edit : HomeController/index
+-home.blade.php: Tambahkan CDN chart.js 
+-foreach transaksi dan count

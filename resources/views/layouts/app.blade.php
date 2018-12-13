@@ -100,5 +100,6 @@
 
     <!-- App scripts -->
     @stack('scripts')
+    @yield('chart')
 </body>
 </html>
