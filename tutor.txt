@@ -93,3 +93,11 @@ video 18
 -Edit : HomeController/index
 -home.blade.php: Tambahkan CDN chart.js 
 -foreach transaksi dan count
+
+video 19
+- Triger untuk pengurangan stok di table_transaksi: penjualan_tiket, transaksis, AFTER, INSERT, BEGIN
+	UPDATE tikets SET jumlah_tiket=jumlah_tiket-NEW.qty
+    where id=NEW.id_tiket;
+END
+
+- Triger untuk cancel transaksi: Cari sambil berjalan
