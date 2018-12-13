@@ -33,4 +33,11 @@ class TransaksiController extends Controller
         $transaksi->delete();
         return redirect()->route('transaksi.index');
     }
+
+    public function update()
+    {
+        $transaksi=Transaksi::where('status','0');
+        $transaksi->update(['status' => '1']);
+        return redirect()->back();
+    }
 }

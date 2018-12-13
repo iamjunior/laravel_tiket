@@ -22,7 +22,7 @@
                          </td></tr>
                           <tr><td>
                                 <button type="submit" name="submit" class="btn btn-success">Simpan</button>
-                                 <a href="#" class="btn btn-danger">Selesai</a>
+                                 <a href="{{ route('transaksi.update') }}" class="btn btn-danger">Selesai</a>
                             </td></tr>                                                                                                                                                                         
                     </table>
                     {!! Form::close() !!}
