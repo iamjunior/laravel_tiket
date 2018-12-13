@@ -80,3 +80,10 @@ video 15
 - tambahkan pada provider: Codedge\Fpdf\FpdfServiceProvider::class, // [1]
 - tambahkan pada aliases:'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class, // [2]
 - tambhkan basic example pada controller
+
+video 16
+- update controller TransaksiController/laporan
+
+video 17
+- Middleware auth : Route::group(['middleware'  => 'auth'], function() { });
+- default login
