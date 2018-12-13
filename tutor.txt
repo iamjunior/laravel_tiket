@@ -107,3 +107,8 @@ video 20
 ikuti langkahnya
 - Jangan lupa untuk melakukan : php artisan vendor:publish
 - Pilih Maatwebsite\excel\..... atau no 9
+
+video 21
+- Edit App Blade Penambahan Menu PDF dan excel
+- Tambah Routing Excel :
+- Tambah Method excel di TransaksiController

@@ -91,4 +91,9 @@ class TransaksiController extends Controller
         $pdf::Output();
         exit;
     }
+
+    public function excel()
+    {
+        return 'cilu baaaa...!!';
+    }
 }
