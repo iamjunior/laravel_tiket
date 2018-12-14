@@ -140,3 +140,6 @@ video 26
 - Buat button import excel di kategor/index.blade.php
 - Buat route: Route::get('upload/kategori/excel','KategoriController@excel')->name('kategori.excel');
 - Buat function excel di KategoriController
+
+video 27
+- Menanganin error export pdf dan excel dikarenakan angka ribuan: gunakan str_replace pada angka ribuan

@@ -8,10 +8,11 @@
                                 <td>{{$no}}</td>
                                 <td>{{ $item->tiket->name_tiket }}</td>
                                 <td>{{ $item->qty }}</td>
-                                <td>{{ $item->tiket->harga_tiket }}</td>
-                                <td>{{ $item->tiket->harga_tiket*$item->qty }}</td>
+                                @php($harga=str_replace('.','',$item->tiket->harga_tiket))
+                                <td>{{ "Rp.".number_format($harga).",-" }}</td>
+                                <td>{{ "Rp.".number_format($harga*$item->qty).",-" }}</td>
                                 <?php $no++ ?>
-                                <?php $total=$total+($item->tiket->harga_tiket*$item->qty) ?>
+                                <?php $total=$total+($harga*$item->qty) ?>
                        @endforeach
-                                <tr><td colspan="5"><p align="right">Total</p></td><td>{{$total}}</td></tr>
+                                <tr><td colspan="5"><p align="right">Total</p></td><td>{{"Rp.".number_format($total).",-"}}</td></tr>
                     </table>
