@@ -95,4 +95,9 @@ class KategoriController extends Controller
         $kategori->delete();
         return redirect()->route('kategori.index')->with('pesan','Data Berhasil Dihapus');
     }
+
+    public function excel()
+    {
+        echo 'Cilu baa...';
+    }
 }

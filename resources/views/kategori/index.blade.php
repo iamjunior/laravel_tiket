@@ -7,7 +7,8 @@
             <div class="card">
                 <div class="card-header">Kategori</div>
                 <div class="card-body">
-                    <a href="{{ route('kategori.create') }}" class="btn btn-info"> Tambah</a><hr/>
+                    <a href="{{ route('kategori.create') }}" class="btn btn-info"> Tambah</a>
+                    <a href="{{ route('kategori.excel') }}" class="btn btn-success"> Import Excel</a><hr/>
                         @include('notifikasi')
                     <table class="table table-bordered" id="users-table">
                         <thead>

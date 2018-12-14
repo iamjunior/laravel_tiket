@@ -21,6 +21,7 @@ Route::group(['middleware'  => 'auth'], function() {
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('verified');
 Route::resource('kategori','KategoriController');
+Route::get('upload/kategori/excel','KategoriController@excel')->name('kategori.excel');
 Route::resource('tiket','TiketController');
 Route::get('transaksi','TransaksiController@index')->name('transaksi.index');
 Route::post('transaksi','TransaksiController@store')->name('transaksi.store');
