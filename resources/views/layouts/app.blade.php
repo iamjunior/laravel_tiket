@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
@@ -53,18 +53,19 @@
                             </li>
                         @else
                          <li class="nav-item">
-                                <a class="nav-link" href="{{ route('kategori.index')}}">Kategori</a>
+                                <a class="nav-link" href="{{ route('kategori.index')}}"><i class="fas fa-box-open"></i> Kategori</a>
                         </li>
                         <li class="nav-item">
-                               <a class="nav-link" href="{{ route('tiket.index')}}">Data Tiket</a>
+                               <a class="nav-link" href="{{ route('tiket.index')}}"><i class="fas fa-address-card"></i> Data Tiket</a>
                         </li>
                         <li class="nav-item">
-                               <a class="nav-link" href="{{ route('transaksi.index')}}">Transaksi</a>
+                               <a class="nav-link" href="{{ route('transaksi.index')}}"><i class="far fa-address-book"></i> Transaksi</a>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Export Laporan Penjualan
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>    
+                            <i class="fas fa-download"></i>
+                            Export Laporan Penjualan
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
