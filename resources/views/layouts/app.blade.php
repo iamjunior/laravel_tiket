@@ -21,6 +21,15 @@
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <style type="text/css">
+        .navbar-expand-md {
+            background-color: #27c8f9;
+        }
+        /* jika tidak mau semua card-header berwarna seperti ini, bisa edit di per file */
+        .card-header { 
+            background-color: #27c8f9;
+        }
+    </style>
 </head>
 <body>
     <div id="app">

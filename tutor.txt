@@ -130,3 +130,8 @@ video 24
 - rubah type pada harga tiket yang tadinya number menjadi text, tambahkan class uang untuk nanti memanggil javascriptnya
 - tulis script dibawah form
 - pada validate gunakan numerik
+
+video 25
+- rubah format menggunakan str_replace agar perhitungan bisa dilakukan pada transaksi/index.blade.php
+- menambahkan style/css untuk memberikan warna pada navbar-expand.
+- gunakan @php() untuk menghindari error view yang menampilkan data yg tidak diinginkan
