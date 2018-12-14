@@ -124,3 +124,9 @@ video 22
 Video 23
 - Gunakan Font Awesome dari : https://fontawesome.com/start copy script yg tersedia untuk menu sidebar
 
+video 24
+- Menggunakan jquery mask untuk format pecahan dari : https://cdnjs.com/libraries/jquery.mask
+- Masukan pada app.blade.php <script></script>
+- rubah type pada harga tiket yang tadinya number menjadi text, tambahkan class uang untuk nanti memanggil javascriptnya
+- tulis script dibawah form
+- pada validate gunakan numerik

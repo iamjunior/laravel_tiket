@@ -46,7 +46,7 @@
                           <div class="form-group row">
                             <label class="col-md-2 col-form-label text-md-right">Jumlah</label>
                                  <div class="col-md-6">
-                                        {!! Form::number('harga_tiket',null,['class'=>'form-control']) !!}
+                                        {!! Form::text('harga_tiket',null,['class'=>'form-control uang']) !!}
                                  </div>
                            </div>
 
@@ -62,4 +62,9 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.uang').mask('000.000.000',{reverse:true});
+    });
+</script>
 @endsection

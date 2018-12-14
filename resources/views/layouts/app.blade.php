@@ -103,6 +103,8 @@
     </div>
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery.js"></script>
+    <!-- jQuery.mask-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.js"></script>
     <!-- DataTables -->
     <script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
     <!-- Bootstrap JavaScript -->

@@ -84,7 +84,7 @@ class TiketController extends Controller
     {
         $request->validate([
             'name_tiket' => 'max:30|required',
-            'harga_tiket' => 'max:12|required',
+            'harga_tiket' => 'required|numeric',
             'jenis_tiket' => 'max:10|required',
             'id_kategori' => 'max:11|required',
             'jumlah_tiket' => 'max:11|required',
