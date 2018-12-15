@@ -143,3 +143,13 @@ video 26
 
 video 27
 - Menanganin error export pdf dan excel dikarenakan angka ribuan: gunakan str_replace pada angka ribuan
+
+PERHATIAN
+"Jika belum ada penjualan, maka home dashboard akan terjadi error, jadi harus ada transaksi terlebih dahulu.
+
+video 28
+-  Membuat KategoriImport : php artisan make:import KategoriImport --model=Kategori
+- Membuat File view excel pada folder kategori
+- Pada form open excel.blade.php tambahkan : 'enctype' => 'multipart/form-data
+- buat route : Route::post('upload/kategori/excel','KategoriController@upload')->name('kategori.upload.excel');
+- Buat function upload pada KategoriController

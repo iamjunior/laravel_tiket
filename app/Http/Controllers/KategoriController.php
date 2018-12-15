@@ -98,6 +98,11 @@ class KategoriController extends Controller
 
     public function excel()
     {
-        echo 'Cilu baa...';
+        return view('kategori.excel');
+    }
+
+    public function upload()
+    {
+        return 'upload eko';
     }
 }
