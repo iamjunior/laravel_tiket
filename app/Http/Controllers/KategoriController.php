@@ -109,7 +109,7 @@ class KategoriController extends Controller
             'file'=>'required|mimes:xls,xlsx'
         ]);
 
-        if($request->has('file')){
+        if($request->has('file')){//bisa menggunakan hasFile "minimal rows 11"
             $file = $request->file('file');
             Excel::import(new KategoriImport,$file);
             return redirect()->route('kategori.index')->with('pesan','Data Berhasil di Upload');
