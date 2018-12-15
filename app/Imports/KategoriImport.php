@@ -15,7 +15,7 @@ class KategoriImport implements ToModel
     public function model(array $row)
     {
         return new Kategori([
-            //
+            'nama_kategori' =>$row[0]
         ]);
     }
 }

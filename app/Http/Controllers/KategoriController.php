@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Kategori;
+use App\Imports\KategoriImport;
+use Excel;
 
 class KategoriController extends Controller
 {
@@ -101,8 +103,17 @@ class KategoriController extends Controller
         return view('kategori.excel');
     }
 
-    public function upload()
+    public function upload(Request $request)
     {
-        return 'upload eko';
+        $this->validate($request,[
+            'file'=>'required|mimes:xls,xlsx'
+        ]);
+
+        if($request->has('file')){
+            $file = $request->file('file');
+            Excel::import(new KategoriImport,$file);
+            return redirect()->route('kategori.index')->with('pesan','Data Berhasil di Upload');
+        }
+        return redirect()->back()->with('pesan','File Gagal di Upload');
     }
 }

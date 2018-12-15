@@ -153,3 +153,8 @@ video 28
 - Pada form open excel.blade.php tambahkan : 'enctype' => 'multipart/form-data
 - buat route : Route::post('upload/kategori/excel','KategoriController@upload')->name('kategori.upload.excel');
 - Buat function upload pada KategoriController
+
+video 29
+- tambahkan pada KategoriImport : 'nama_kategori' =>$row[0]
+- Pada KategoriController: use App\Imports\KategoriImport dan use\Excel
+- Pada function Upload tambahkan validasi "lihat langsung di file"

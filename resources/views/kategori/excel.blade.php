@@ -21,7 +21,7 @@
 
                             <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-2">
-                                        <button type="submit" class="btn btn-danger">Tambah data</button>
+                                        <button type="submit" class="btn btn-danger">Upload Excel</button>
                                         <a href="{{ route('kategori.index') }}" class="btn btn-info">Kembali</a>
                                     </div>
                           </div>
